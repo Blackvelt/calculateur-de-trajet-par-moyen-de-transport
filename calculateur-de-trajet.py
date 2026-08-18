@@ -2,15 +2,17 @@ historique = []
 
 while True:
     print(" CALCULATEUR DE TRAJET ")
+    print("Veuillez choisir une option.")
     print("1 - Zemidjan")
     print("2 - Taxi")
     print("0 - Quitter")
 
-    choix = input("Choisis ton moyen de transport : ")
+    choix = input("Choisissez votre moyen de transport : ")
 
     if choix == "0":
         print("Merci d'avoir utilisé le programme.")
-        break
+        print("Bonne route à vous...")
+        break   
 
     if choix == "1":
         moyen = "Zemidjan"
@@ -46,7 +48,7 @@ while True:
             continue
 
     except ValueError:
-        print("Erreur : Verifier ce que vous avez entrer.")
+        print("Erreur : Veuillez verifier ce que vous avez entrer.")
         continue
 
     heure_decimal = heures + minutes / 60
@@ -85,7 +87,7 @@ while True:
 
     print("Prix final :", prix_arrondi, "FCFA")
 
-    encore = input("\nVeux-tu calculer un autre trajet ? (o/n) : ")
+    encore = input("Voudriez-vous calculer un autre trajet ? (o/n) : ")
 
     if encore.lower() != "o":
         break
@@ -97,7 +99,7 @@ if len(historique) == 0:
     print("Aucun trajet enregistré.")
 else:
     for i, trajet in enumerate(historique, 1):
-        print("\nTrajet", i)
+        print("Trajet", i)
         print("moyen :", trajet["moyen"])
         print("Distance :", trajet["distance"], "km")
         print("Heure :", trajet["heure"])
@@ -109,4 +111,4 @@ else:
 
         print("Prix :", trajet["prix"], "FCFA")
 
-print("\nFin du programme.")
+print("Fin du programme.")
